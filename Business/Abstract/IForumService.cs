@@ -1,0 +1,19 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Linq.Expressions;
+using System.Text;
+using System.Threading.Tasks;
+using Core.Utilities.Results;
+using Entities.Concrete;
+
+namespace Business.Abstract
+{
+    public interface IForumService
+    {
+        IResult Add(Forum forum);
+        IResult Update(Forum forum);
+        IResult Delete(Forum forum);
+        IDataResult<List<Forum>> GetList(Expression<Func<Forum, bool>> filter = null);
+    }
+}
